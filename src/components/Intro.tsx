@@ -2,20 +2,21 @@ import Link from 'next/link';
 import { AiOutlineMail } from 'react-icons/ai';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { AcademicCapIcon } from '@heroicons/react/solid'
 
 export default function Intro() {
     return (
         <div id='home' className='w-full h-screen text-center'>
-            <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
-                <div>
+            <div className='max-w-[1240px] w-full mx-auto p-2 flex justify-center items-center h-full'>
+                <div className="mt-12">
                     <p className='uppercase text-md tracking-widest '>
                         LET&#39;S BUILD SOMETHING TOGETHER
                     </p>
                     <p className='py-4 text-5xl'>
-                        Hi, I&#39;m <span className='text-[#5651e5]'> Himanshu</span>
+                        Hi, I&#39;m <span className='text-red-600'> Himanshu</span>
                     </p>
                     <h1 className='py-2 text-5xl'>A Full Stack Web Developer</h1>
-                    <p className='py-4  sm:max-w-[70%] m-auto'>
+                    <p className='py-4  sm:max-w-[70%] m-auto text-lg'>
                         I am a Skilled FullStack JavaScript Developer 🚀 from India. I am always working on some project or learning something new!
                         I also enjoy playing fps games and am currently working hard to build my dream gaming setup.
                     </p>
@@ -38,7 +39,7 @@ export default function Intro() {
                             <AiOutlineMail size={28} />
                         </Link>
                         <Link href='/resume'>
-                            <BsFillPersonLinesFill size={28} />
+                            <AcademicCapIcon className='h-8 text-white' />
                         </Link>
                     </div>
                 </div>

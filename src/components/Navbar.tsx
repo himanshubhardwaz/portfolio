@@ -12,7 +12,7 @@ export default function Navbar() {
     }
 
     return (
-        <div className="w-full h-20">
+        <div className="w-full py-12 fixed">
             <div className="flex justify-between items-center w-full h-full px-2 xl:px-16">
                 <Link href="/">
                     <a className="text-primary underlined focus:outline-none block whitespace-nowrap text-2xl font-medium transition">
@@ -31,28 +31,28 @@ export default function Navbar() {
                             </Link>
                         </li>
                         <li className="ml-10 text-sm uppercase hover:border-b">
-                            <Link href="/">
+                            <Link href="/skills">
                                 <a><h1>
                                     Skills
                                 </h1></a>
                             </Link>
                         </li>
                         <li className="ml-10 text-sm uppercase hover:border-b">
-                            <Link href="/">
+                            <Link href="/projects">
                                 <a><h1>
                                     Projects
                                 </h1></a>
                             </Link>
                         </li>
                         <li className="ml-10 text-sm uppercase hover:border-b">
-                            <Link href="/">
+                            <Link href="/about">
                                 <a><h1>
                                     About
                                 </h1></a>
                             </Link>
                         </li>
                         <li className="ml-10 text-sm uppercase hover:border-b">
-                            <Link href="/">
+                            <Link href="/contact">
                                 <a><h1>
                                     Contact
                                 </h1></a>
@@ -91,28 +91,28 @@ export default function Navbar() {
                                 </Link>
                             </li>
                             <li className="py-4 text-sm">
-                                <Link href="/">
+                                <Link href="/skills">
                                     <a><h1>
                                         Skills
                                     </h1></a>
                                 </Link>
                             </li>
                             <li className="py-4 text-sm">
-                                <Link href="/">
+                                <Link href="/projects">
                                     <a><h1>
                                         Projects
                                     </h1></a>
                                 </Link>
                             </li>
                             <li className="py-4 text-sm">
-                                <Link href="/">
+                                <Link href="/about">
                                     <a><h1>
                                         About
                                     </h1></a>
                                 </Link>
                             </li>
                             <li className="py-4 text-sm">
-                                <Link href="/">
+                                <Link href="/contact">
                                     <a><h1>
                                         Contact
                                     </h1></a>

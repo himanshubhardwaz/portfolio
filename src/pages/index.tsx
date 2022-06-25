@@ -1,26 +1,19 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Navbar from '@/components/Navbar'
+import type { ReactElement } from 'react'
+import Layout from '@/components/Layout'
 import Intro from '@/components/Intro'
+import type { NextPageWithLayout } from './_app'
 
-const Home: NextPage = () => {
+const Page: NextPageWithLayout = () => {
+  return <Intro />
+}
+
+Page.getLayout = function getLayout(page: ReactElement) {
   return (
-    <div>
-      <Head>
-        <title>Himanshu | Fullstack Developer</title>
-        <meta name="keyword" content="portfolio, javascript, developer" />
-        <meta property="og:title" content="Himanshu Bhardwaz | Full Stack Web Developer" />
-        <meta property="og:description" content="JavaScript wizard, chaotic good" />
-        <meta property="og:image" content={process.env.IMAGE_URL} />
-        <meta property="og:url" content="https://www.linkedin.com/in/himanshubhardwaz/" />
-        <meta property="og:type" content="website" />
-      </Head>
-      <main>
-        <Navbar />
-        <Intro />
-      </main>
-    </div>
+    <Layout>
+      {page}
+    </Layout>
   )
 }
 
-export default Home
+export default Page
