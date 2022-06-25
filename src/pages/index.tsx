@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
   return (
-    <div>Himanshu Bhardwaz</div>
+    <div>Himanshu Bhardwaz, Frontend developer</div>
   )
 }
 
