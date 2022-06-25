@@ -3,6 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply text-white bg-gray-800
+@layer base {
+  body {
+    @apply text-white bg-myGray tracking-wide
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold
+  }
 }
