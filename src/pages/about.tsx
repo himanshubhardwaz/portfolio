@@ -4,7 +4,7 @@ import Layout from '@/components/Layout'
 import type { NextPageWithLayout } from './_app'
 import Link from 'next/link'
 
-const Page: NextPageWithLayout = () => {
+const AboutPage: NextPageWithLayout = () => {
     return (
         <div id='about' className='w-full md:h-screen p-2 flex items-center py-24'>
             <div className='max-w-[1240px] m-auto md:grid grid-cols-3 gap-8'>
@@ -52,7 +52,7 @@ const Page: NextPageWithLayout = () => {
     )
 }
 
-Page.getLayout = function getLayout(page: ReactElement) {
+AboutPage.getLayout = function getLayout(page: ReactElement) {
     return (
         <Layout>
             {page}
@@ -60,4 +60,4 @@ Page.getLayout = function getLayout(page: ReactElement) {
     )
 }
 
-export default Page
+export default AboutPage
