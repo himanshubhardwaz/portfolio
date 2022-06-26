@@ -6,18 +6,16 @@ import type { NextPageWithLayout } from './_app'
 import Button from '@/components/Button'
 
 const initialState = {
-    name: '',
-    phone: '',
+    fName: '',
+    lName: '',
     email: '',
-    subject: '',
     message: '',
 }
 
 type state = {
-    name: string,
-    phone: string,
+    fName: string,
+    lName: string,
     email: string,
-    subject: string,
     message: string,
 }
 
@@ -28,8 +26,10 @@ type action = {
 
 const reducer = (state: state, action: action) => {
     switch (action.type) {
-        case 'name':
-            return { ...state, name: action.payload }
+        case 'fName':
+            return { ...state, fName: action.payload }
+        case 'lName':
+            return { ...state, lName: action.payload }
         case 'email':
             return { ...state, email: action.payload }
         case 'phone':
@@ -56,12 +56,11 @@ const ContactPage: NextPageWithLayout = () => {
     }
 
     const handleSubmit = (e: any) => {
-        console.log(e);
-        e.preventDefault();
         dispatch({
             type: 'reset',
             payload: ''
         })
+        e.preventDefault();
     }
     return (
         <div className="w-screen py-24">
@@ -71,64 +70,44 @@ const ContactPage: NextPageWithLayout = () => {
                 </p>
                 <h2 className='py-4'>Get In Touch</h2>
                 <div className="">
-                    <form onSubmit={handleSubmit} className="flex flex-col gap-4" method='POST'>
-                        <div className="grid md:grid-cols-5 lg:grid-cols-10">
-                            <label>Name</label>
-                            <input
-                                type="text"
-                                name="name"
-                                value={state.name}
-                                onChange={handleChange}
-                                className="form-input text-myGray focus:border-red-500 focus:ring-red-500 rounded-md col-span-3"
-                            />
+                    <form className="w-full max-w-lg">
+                        <div className="flex flex-wrap -mx-3 mb-6">
+                            <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                                <label className="block uppercase tracking-wide text-xs font-bold mb-2" htmlFor="grid-first-name">
+                                    First Name
+                                </label>
+                                <input className="appearance-none block w-full bg-gray-200 text-myGray border focus:border-red-500 focus:ring-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="First Name" name="fName" onChange={handleChange} value={state.fName} />
+                            </div>
+                            <div className="w-full md:w-1/2 px-3">
+                                <label className="block uppercase tracking-wide text-xs font-bold mb-2" htmlFor="grid-last-name">
+                                    Last Name
+                                </label>
+                                <input className="appearance-none block w-full bg-gray-200 text-myGray border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-red-500 focus:ring-red-500" type="text" placeholder="Last Name" name="lName" onChange={handleChange} value={state.lName} />
+                            </div>
                         </div>
-                        <div className="grid md:grid-cols-5 lg:grid-cols-10">
-                            <label>Phone</label>
-                            <input
-                                type="text"
-                                name="phone"
-                                value={state.phone}
-                                onChange={handleChange}
-                                className="form-input text-myGray focus:border-red-500 focus:ring-red-500 rounded-md col-span-3"
-                            />
+                        <div className="flex flex-wrap -mx-3 mb-6">
+                            <div className="w-full px-3">
+                                <label className="block uppercase tracking-wide text-xs font-bold mb-2" htmlFor="grid-password">
+                                    E-mail
+                                </label>
+                                <input className="appearance-none block w-full bg-gray-200 text-myGray border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-red-500 focus:ring-red-500" type="email" placeholder="Email" name="email" onChange={handleChange} value={state.email} />
+                            </div>
                         </div>
-                        <div className="grid md:grid-cols-5 lg:grid-cols-10">
-                            <label>Email</label>
-                            <input
-                                type="email"
-                                name="email"
-                                value={state.email}
-                                onChange={handleChange}
-                                className="form-input text-myGray focus:border-red-500 focus:ring-red-500 rounded-md col-span-3"
-                            />
+                        <div className="flex flex-wrap -mx-3 mb-6">
+                            <div className="w-full px-3">
+                                <label className="block uppercase tracking-wide text-xs font-bold mb-2" htmlFor="grid-password">
+                                    Message
+                                </label>
+                                <textarea className=" no-resize appearance-none block w-full bg-gray-200 text-myGray border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-red-500 focus:ring-red-500 h-48 resize-none" id="message" name="message" onChange={handleChange} value={state.message} />
+                            </div>
                         </div>
-
-                        <div className="grid md:grid-cols-5 lg:grid-cols-10">
-                            <label>Subject</label>
-                            <input
-                                type="text"
-                                name="subject"
-                                value={state.subject}
-                                onChange={handleChange}
-                                className="form-input text-myGray focus:border-red-500 focus:ring-red-500 rounded-md col-span-3"
-                            />
-                        </div>
-
-                        <div className="grid md:grid-cols-5 lg:grid-cols-10">
-                            <label>Message</label>
-                            <textarea
-                                name="message"
-                                value={state.message}
-                                onChange={handleChange}
-                                className="form-input text-myGray focus:border-red-500 focus:ring-red-500 rounded-md col-span-3"
-                            />
-                        </div>
-
-                        <div className="grid md:grid-cols-5 lg:grid-cols-10">
-                            <div />
-                            <Button className="">
-                                Submit
-                            </Button>
+                        <div className="md:flex md:items-center">
+                            <div className="md:w-1/3">
+                                <Button onClick={handleSubmit}>
+                                    Send
+                                </Button>
+                            </div>
+                            <div className="md:w-2/3"></div>
                         </div>
                     </form>
                 </div>

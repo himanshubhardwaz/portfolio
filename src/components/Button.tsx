@@ -2,14 +2,15 @@ import { FC, ReactNode } from 'react'
 
 type Props = {
     children: ReactNode,
-    className: string
+    className?: string,
+    onClick: (e: any) => void,
 }
 
-const Button: FC<Props> = ({ children, className, ...props }) => {
+const Button: FC<Props> = ({ children, className = "", ...rest }) => {
     return (
-        <button {...props} className={`bg-red-500 px-4 py-2 rounded-md ${className}`}>
+        <button className={`bg-red-500 px-4 py-2 rounded-md ${className}`} {...rest}>
             {children}
-        </button>
+        </button >
     )
 }
 
