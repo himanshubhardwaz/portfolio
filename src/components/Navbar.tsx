@@ -3,8 +3,33 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa'
 import { AiOutlineMail } from 'react-icons/ai'
 import { useState } from 'react';
+import { useRouter } from 'next/router'
+
+const navLinks = [
+    {
+        path: '/',
+        name: 'Home'
+    },
+    {
+        path: '/about',
+        name: 'About'
+    },
+    {
+        path: '/skills',
+        name: 'Skills'
+    },
+    {
+        path: '/projects',
+        name: 'Projects'
+    },
+    {
+        path: '/contact',
+        name: 'Contact'
+    },
+]
 
 export default function Navbar() {
+    const router = useRouter();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -27,41 +52,17 @@ export default function Navbar() {
                 </Link>
                 <nav>
                     <ul className="hidden md:flex">
-                        <li className="ml-10 text-sm uppercase hover:border-b">
-                            <Link href="/">
-                                <a><h1>
-                                    Home
-                                </h1></a>
-                            </Link>
-                        </li>
-                        <li className="ml-10 text-sm uppercase hover:border-b">
-                            <Link href="/about">
-                                <a><h1>
-                                    About
-                                </h1></a>
-                            </Link>
-                        </li>
-                        <li className="ml-10 text-sm uppercase hover:border-b">
-                            <Link href="/skills">
-                                <a><h1>
-                                    Skills
-                                </h1></a>
-                            </Link>
-                        </li>
-                        <li className="ml-10 text-sm uppercase hover:border-b">
-                            <Link href="/projects">
-                                <a><h1>
-                                    Projects
-                                </h1></a>
-                            </Link>
-                        </li>
-                        <li className="ml-10 text-sm uppercase hover:border-b">
-                            <Link href="/contact">
-                                <a><h1>
-                                    Contact
-                                </h1></a>
-                            </Link>
-                        </li>
+                        {navLinks.map(link => {
+                            return (
+                                <li key={link.path} className="ml-10 text-sm uppercase hover:border-b">
+                                    <Link href={link.path}>
+                                        <a><h1 className={router.pathname === link.path ? 'border-b' : ''}>
+                                            {link.name}
+                                        </h1></a>
+                                    </Link>
+                                </li>
+                            )
+                        })}
                     </ul>
                     <div className="md:hidden">
                         <MenuIcon className="text-white h-8" onClick={toggleMenu} />
@@ -87,41 +88,18 @@ export default function Navbar() {
 
                     <div className="py-4 flex flex-col">
                         <ul className="uppercase">
-                            <li className="py-4 text-sm">
-                                <Link href="/">
-                                    <a><h1>
-                                        Home
-                                    </h1></a>
-                                </Link>
-                            </li>
-                            <li className="py-4 text-sm">
-                                <Link href="/skills">
-                                    <a><h1>
-                                        Skills
-                                    </h1></a>
-                                </Link>
-                            </li>
-                            <li className="py-4 text-sm">
-                                <Link href="/projects">
-                                    <a><h1>
-                                        Projects
-                                    </h1></a>
-                                </Link>
-                            </li>
-                            <li className="py-4 text-sm">
-                                <Link href="/about">
-                                    <a><h1>
-                                        About
-                                    </h1></a>
-                                </Link>
-                            </li>
-                            <li className="py-4 text-sm">
-                                <Link href="/contact">
-                                    <a><h1>
-                                        Contact
-                                    </h1></a>
-                                </Link>
-                            </li>
+                            {navLinks.map(link => {
+                                return (
+                                    <li key={link.path} className="py-4 text-sm">
+                                        <Link href={link.path}>
+                                            <a><h1 className={router.pathname === link.path ? 'underline' : ''}>
+                                                {link.name}
+                                            </h1></a>
+                                        </Link>
+                                    </li>
+                                )
+                            })}
+
                         </ul>
                         <div className="pt-40">
                             <p className="uppercase tracking-widest">Lets connect</p>
