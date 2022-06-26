@@ -11,6 +11,10 @@ export default function Navbar() {
         setIsMenuOpen(curr => !curr);
     }
 
+    const stopPropagation = (e: { stopPropagation: () => void; }) => {
+        e.stopPropagation();
+    }
+
     return (
         <div className="w-full py-12 fixed">
             <div className="flex justify-between items-center w-full h-full px-2 xl:px-16">
@@ -64,9 +68,9 @@ export default function Navbar() {
                     </div>
                 </nav>
             </div>
-            <div className={isMenuOpen ? "fixed left-0 top-0 w-full h-screen bg-gray-800/60" : ""}>
+            <div className={isMenuOpen ? "fixed left-0 top-0 w-full h-screen bg-gray-800/60" : ""} onClick={toggleMenu}>
                 <div className={isMenuOpen ? "fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-myGray p-10 ease-in duration-500" :
-                    "fixed left-[-100%] top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-myGray p-10 ease-in duration-500"}>
+                    "fixed left-[-100%] top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-myGray p-10 ease-in duration-500"} onClick={stopPropagation}>
                     <div className="flex w-full items-center justify-between">
                         <Link href="/">
                             <a className="text-primary underlined focus:outline-none block whitespace-nowrap text-2xl font-medium transition">

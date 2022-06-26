@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import type { ReactElement } from 'react'
 import Layout from '@/components/Layout'
-import Intro from '@/components/Intro'
 import type { NextPageWithLayout } from './_app'
 import Image from 'next/image'
 
