@@ -4,6 +4,7 @@ import type { NextPageWithLayout } from './_app'
 import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
 import { useRouter } from 'next/router'
 import Button from '@/components/Button'
+import Link from 'next/link'
 
 const ResumePage: NextPageWithLayout = () => {
     const router = useRouter();
@@ -155,9 +156,9 @@ const ResumePage: NextPageWithLayout = () => {
                     </li>
                 </ul>
             </div>
-            <a href="/api/getResume">
+            <Link href="/api/getResume">
                 <Button>Download</Button>
-            </a>
+            </Link>
         </div>
     )
 }
