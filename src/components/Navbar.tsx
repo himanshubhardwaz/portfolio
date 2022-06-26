@@ -23,6 +23,10 @@ const navLinks = [
         name: 'Projects'
     },
     {
+        path: '/resume',
+        name: 'Resume'
+    },
+    {
         path: '/contact',
         name: 'Contact'
     },

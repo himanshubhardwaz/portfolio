@@ -3,7 +3,7 @@ import { FC, ReactNode } from 'react'
 type Props = {
     children: ReactNode,
     className?: string,
-    onClick: (e: any) => void,
+    onClick?: (e: any) => void,
 }
 
 const Button: FC<Props> = ({ children, className = "", ...rest }) => {
