@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import type { ReactElement } from 'react'
 import Layout from '@/components/Layout'
-import type { NextPageWithLayout } from './_app'
+import type { NextPageWithLayout } from './../_app'
 import Skill from '@/components/Skill'
 import Project from '@/components/Project'
 
@@ -17,13 +17,13 @@ const ProjectsPage: NextPageWithLayout = () => {
                     <Project
                         img='/images/projects/portfolio.png'
                         techStack="Next.js, TypeScript, Tailwind"
-                        redirect="https://www.thehb.lol"
+                        redirect="https://github.com/himanshubhardwaz/portfolio"
                         title="Personal Portfolio"
                     />
                     <Project
                         img='/images/projects/dialworks.png'
                         techStack="React.js, Redux, React Query, Antd, Less, Node.js"
-                        redirect="https://dialworks.io"
+                        redirect="/projects/dialworks"
                         title="Dialworks"
                     />
                     <Project
