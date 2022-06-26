@@ -12,10 +12,6 @@ const ResumePage: NextPageWithLayout = () => {
         router.push(path);
     }
 
-    const downloadResume = () => {
-
-    }
-
     return (
         <div className='max-w-[940px] mx-auto p-2 py-24'>
             <h2 className='text-center'>Resume</h2>
@@ -159,7 +155,7 @@ const ResumePage: NextPageWithLayout = () => {
                     </li>
                 </ul>
             </div>
-            <a href="/api/getPDF">
+            <a href="/api/getResume">
                 <Button>Download</Button>
             </a>
         </div>
