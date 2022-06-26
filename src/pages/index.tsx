@@ -38,10 +38,10 @@ const Page: NextPageWithLayout = () => {
               <FaGithub size={28} />
             </a>
             <Link href='/contact'>
-              <AiOutlineMail size={28} />
+              <AiOutlineMail size={28} className="cursor-pointer" />
             </Link>
             <Link href='/resume'>
-              <AcademicCapIcon className='h-8 text-white' />
+              <AcademicCapIcon className='h-8 text-white cursor-pointer' />
             </Link>
           </div>
         </div>
