@@ -15,7 +15,7 @@ const ResumePage: NextPageWithLayout = () => {
 
     return (
         <div className='max-w-[940px] mx-auto p-2 py-24'>
-            <h2 className='text-center'>Resume</h2>
+            <h2 className='text-center lg:mt-12'>Resume</h2>
             <div className='bg-[#d0d4d6] my-4 p-4 w-full flex justify-between items-center'>
                 <p className='text-center text-xl text-myGray'>Himanshu Bhardwaz</p>
                 <div className='flex'>
