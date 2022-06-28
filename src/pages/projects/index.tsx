@@ -2,8 +2,11 @@
 import type { ReactElement } from 'react'
 import Layout from '@/components/Layout'
 import type { NextPageWithLayout } from './../_app'
-import Skill from '@/components/Skill'
 import Project from '@/components/Project'
+import portfolioImage from '../../../public/images/projects/portfolio.png'
+import dialworksImage from '../../../public/images/projects/dialworks.png'
+import npmImage from '../../../public/images/projects/npm.png'
+import chessImage from '../../../public/images/projects/chess.png'
 
 const ProjectsPage: NextPageWithLayout = () => {
     return (
@@ -15,25 +18,25 @@ const ProjectsPage: NextPageWithLayout = () => {
                 <h2 className='py-4'>What I have built</h2>
                 <div className='grid md:grid-cols-2 gap-8'>
                     <Project
-                        img='/images/projects/portfolio.png'
+                        img={portfolioImage}
                         techStack="Next.js, TypeScript, Tailwind"
                         redirect="https://github.com/himanshubhardwaz/portfolio"
                         title="Personal Portfolio"
                     />
                     <Project
-                        img='/images/projects/dialworks.png'
+                        img={dialworksImage}
                         techStack="React.js, Redux, React Query, Antd, Less, Node.js"
                         redirect="/projects/dialworks"
                         title="Dialworks"
                     />
                     <Project
-                        img='/images/projects/npm.png'
+                        img={npmImage}
                         techStack="React.js"
                         redirect="https://www.npmjs.com/package/react-use-form-validate"
                         title="react-use-form-validate"
                     />
                     <Project
-                        img='/images/projects/chess.png'
+                        img={chessImage}
                         techStack="React.js, Rxjs"
                         redirect="https://chess.thehb.lol"
                         title="2 Player Chess Game"

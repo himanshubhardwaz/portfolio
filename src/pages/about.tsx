@@ -1,8 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from 'next/image'
 import type { ReactElement } from 'react'
 import Layout from '@/components/Layout'
 import type { NextPageWithLayout } from './_app'
 import Link from 'next/link'
+import aboutImage from '../../public/images/about-sec.webp'
 
 const AboutPage: NextPageWithLayout = () => {
     return (
@@ -45,7 +46,7 @@ const AboutPage: NextPageWithLayout = () => {
                     </Link>
                 </div>
                 <div className='w-full h-auto m-auto rounded-xl flex items-center justify-center p-4 hover:scale-105 ease-in duration-300'>
-                    <img src='/images/about-sec.webp' className='rounded-xl' alt='/' />
+                    <Image src={aboutImage} className='rounded-xl' alt='/' />
                 </div>
             </div>
         </div>

@@ -45,7 +45,7 @@ export default function Navbar() {
     }
 
     return (
-        <div className="w-full py-8 lg:py-12 fixed bg-myGray z-50">
+        <div className="w-full py-8 lg:py-10 fixed bg-myGray z-50">
             <div className="flex justify-between items-center w-full h-full px-2 xl:px-16">
                 <Link href="/">
                     <a className="text-primary underlined focus:outline-none block whitespace-nowrap text-2xl font-medium transition">
