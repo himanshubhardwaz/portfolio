@@ -17,14 +17,9 @@ const Page: NextPageWithLayout = () => {
           <p className='py-4 text-5xl'>
             Hi, I&#39;m{" "}
             <br className="block md:hidden" />
-            <span className="relative">
-              <span className="h-20 pt-2 overflow-x-hidden whitespace-nowrap text-brand-accent text-red-500">
-                Himanshu <span className="text-3xl md:text-5xl">👋</span>
-              </span>
-              <span
-                className={`cursor absolute -bottom-0 left-0 -top-1 inline-block bg-myGray w-full animate-type will-change`}
-              />
-            </span>
+            <span className="text-red-500">Himanshu</span>{" "}
+            <br className="block md:hidden" />
+            👋
           </p>
           <h1 className='py-2 text-4xl'>A Full Stack Web Developer</h1>
           <p className='py-4  sm:max-w-[70%] m-auto text-lg'>

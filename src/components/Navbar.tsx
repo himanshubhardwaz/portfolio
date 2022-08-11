@@ -69,12 +69,12 @@ export default function Navbar() {
                         })}
                     </ul>
                     <div className="md:hidden">
-                        <MenuIcon className="text-white h-8" onClick={toggleMenu} />
+                        <MenuIcon className="text-white h-8 cursor-pointer" onClick={toggleMenu} />
                     </div>
                 </nav>
             </div>
             <div className={isMenuOpen ? "fixed left-0 top-0 w-full h-screen bg-gray-800/60" : ""} onClick={toggleMenu}>
-                <div className={isMenuOpen ? "fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-myGray p-10 ease-in duration-500" :
+                <div className={isMenuOpen ? "fixed left-0 top-0 w-[100%] h-screen bg-myGray p-10 ease-in duration-500" :
                     "fixed left-[-100%] top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-myGray p-10 ease-in duration-500"} onClick={stopPropagation}>
                     <div className="flex w-full items-center justify-between">
                         <Link href="/">

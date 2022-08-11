@@ -15,9 +15,6 @@ const AboutPage: NextPageWithLayout = () => {
                     </p>
                     <h2 className='py-4'>Who I Am</h2>
                     <p className='py-2'>
-                        / / I am not your regular everyday normal Software Developer.
-                    </p>
-                    <p className='py-2'>
                         Fascinated with how intricate programming can be I was quickly drawn
                         to learn more. I started my programming journey just before I went to college. I began
                         with python got bored with it, then tried my hands on android development,
