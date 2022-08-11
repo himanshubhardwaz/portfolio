@@ -2,13 +2,15 @@ import type { ReactElement } from 'react'
 import type { NextPageWithLayout } from './_app'
 import Layout from '@/components/Layout'
 import Button from '@/components/Button'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Alert from '@/components/Alert'
 
 const ContactPage: NextPageWithLayout = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const [message, setMessage] = useState('');
+
+    const formRef = useRef<HTMLFormElement>(null);
 
     const handleSubmit = async (e: any) => {
         setIsLoading(true);
@@ -41,13 +43,16 @@ const ContactPage: NextPageWithLayout = () => {
 
         else {
             setMessage('Successfully submitted form');
+            if (formRef && formRef.current) {
+                formRef.current.reset();
+            }
         }
     }
     return (
         <div className="w-screen py-28">
             <div className='max-w-[1240px] mx-auto flex flex-col justify-center p-2'>
                 <h2 className='py-4'>Get In Touch</h2>
-                <form className="w-full max-w-lg" onSubmit={handleSubmit} id="contact-form">
+                <form className="w-full max-w-lg" onSubmit={handleSubmit} id="contact-form" ref={formRef}>
                     <div className="flex flex-wrap -mx-3 mb-6">
                         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                             <label className="block uppercase tracking-wide text-xs font-bold mb-2" htmlFor="grid-first-name">
