@@ -94,7 +94,7 @@ export default function Navbar() {
                         <ul className="uppercase">
                             {navLinks.map(link => {
                                 return (
-                                    <li key={link.path} className="py-4 text-sm">
+                                    <li key={link.path} className="py-4 text-sm" onClick={toggleMenu}>
                                         <Link href={link.path}>
                                             <a><h1 className={router.pathname === link.path ? 'underline' : ''}>
                                                 {link.name}
